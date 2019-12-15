@@ -1,0 +1,102 @@
+/*Start Section Footer*/
+.jumbotron3{
+
+    padding: 2rem 0 3.5rem;
+    border-radius: 0;
+    background-color: #055349;
+}
+.footer-left{
+
+    background-color: #0b695d;
+    border-radius: 8px;
+}
+.footer-right{
+    background-color: #0b695d;
+    height: 80%;
+    border-radius: 8px;
+}
+
+.footer-ul-style{
+    color: #cccccc;
+    list-style-type: none;
+    position: relative;
+}
+.footer-ul-style li{
+    line-height: 3rem;
+
+}
+.footer-ul-style a{
+    line-height: 5%;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: .9rem;
+    margin-left: 8px;
+}
+h5{
+    color: white;
+}
+.footer-contact{
+    position: absolute;
+    left: -1rem;
+    top: -1.5rem;
+
+    color: white;
+}
+.contact-hr{
+    background-color: white;
+    margin-top: 6px;
+}
+
+.footer-img-wp{
+    width: 20px;
+}
+
+.footer-wp{
+    position: absolute;
+    left: -1rem;
+    bottom: -5rem;
+    color: white;
+    width: 100%;
+}
+
+.contact form{
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.footer-label1{
+    font-size: .8rem;
+    margin-top: 40px;
+}
+.footer-label2{
+    background-color: #055349;
+    font-size: 1rem;
+    padding: .3rem 3rem .3rem 3rem;
+    border-radius: 8px;
+    width: 100%;
+
+}
+
+.img-contact{
+    width: 1.5rem;
+
+}
+.lb-size{
+    font-size: .8rem;
+}
+.footer-right-box-size{
+    margin-top: 2.2rem;
+}
+.box-tr{
+    background-color: transparent;
+}
+.copyRight{
+    color: white;
+}
+.copyRight svg{
+    color: red;
+}
+
+
+
+/*End Section Footer*/

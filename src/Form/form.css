@@ -1,0 +1,172 @@
+.section-heading h3 {
+    text-transform: capitalize;
+    color: #101d2c;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.wm{
+    position: absolute;
+    top: 10%;
+}
+.img-fluid{
+    width: 100%;
+}
+
+
+#f1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    color: #0a7567;
+}
+
+#f2 {
+    font-weight: 400;
+    font-size: 1.7rem;
+    padding-bottom: 1.6rem;
+    color: #0a7567;
+}
+/*End Header*/
+/*Start Section Two*/
+.jumbotron {
+    margin-bottom: -5%;
+    padding: 0 0 3.5rem;
+    border-radius: 0;
+    background-color: #f4f3f3;
+}
+
+.heading {
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #0a7567;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.heading-p{
+    width: 95%;
+}
+/*End Section Two*/
+/*Start form One*/
+
+.form1{
+    width: 95%;
+    margin-bottom: 15px;
+}
+
+.bg-form{
+    background-color: #fbfbfb;
+    border-radius: 8px;
+}
+.head-form{
+
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #0a7567;
+}
+.form-p{
+    font-size: 1.1rem;
+    color: #787878;
+    letter-spacing: 2px;
+}
+
+.link2{
+    color: #a82222;
+    text-align: left;
+}
+.btn-next{
+    background-color: #127467;
+    color: white;
+    border: 2px solid #09584e;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+.btn-next:hover{
+    color: white;
+}
+/*End Form One*/
+/*Start Form Two*/
+.form2{
+    width: 95%;
+    margin-bottom: 15px;
+}
+.form-info{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 10px;
+    right: 15px;
+}
+.form-textarea-label{
+    font-size: .7rem;
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+.form-textarea-label2{
+    font-size: 1rem;
+}
+.btn-previous{
+    background-color: #b22030;
+    color: white;
+    border: 2px solid #8f1623;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-left: 10px;
+}
+.btn-previous:hover{
+    color: white;
+}
+/*End Form Two*/
+/*Start Form Three*/
+.head-form-label{
+    font-size: .8rem;
+    font-weight: 700;
+}
+.border-dark{
+    border-radius: 5px;
+    border: 1px solid #000000;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+.close-img{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+.upload-form{
+    font-size: .9rem;
+}
+.upload-form a{
+    color: #118a7a;
+}
+.clients-hr {
+    border-top: 2px solid #787878;
+    margin-bottom: -20px;
+}
+.add-form{
+    width: 35px;
+    height: 35px;
+}
+.add-label{
+    color: #0e786a;
+}
+
+/*End Form Three*/
+/*Start Form Four*/
+.label-form{
+    color: #787878;
+}
+.label-content{
+    font-weight: 700;
+}
+.label-cost{
+    color: #0e786a;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.label-form-cost{
+    font-size: 2rem;
+}
+/*End Form Four*/

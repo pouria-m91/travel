@@ -1,0 +1,39 @@
+.navbar {
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: .8rem;
+    /*white-space: nowrap;*/
+    background: white !important;
+}
+
+.navbar-brand img {
+    height: 4rem;
+}
+
+.navbar-nav li {
+    padding-right: .7rem;
+}
+#bg{
+    color: #0a7567;
+}
+#ApplyBg{
+    background-color: #0a7567;
+    border-radius: 2rem;
+    color: white;
+
+
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #0a7567;
+
+}
+.nav-link{
+    color: #0a7567;
+}

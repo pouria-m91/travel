@@ -1,0 +1,119 @@
+/*Start Section One*/
+.jumbotron {
+    padding: 0 0 0;
+    border-radius: 0;
+    background-color: #f4f3f3;
+}
+
+.heading-center {
+    font-size: 1.9rem;
+    text-transform: capitalize;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+thead {
+    background-color: #39BA78;
+    color: white;
+
+}
+
+.label-check {
+    color: #232323;
+    letter-spacing: 1px;
+}
+
+.label-check a {
+    color: #0c6d61;
+}
+
+/*End Section One*/
+/*Start Section Two*/
+.jumbotron2 {
+    position: relative;
+    top: -2rem;
+    padding: 0 0 3.5rem;
+    border-radius: 0;
+    background-color: white;
+}
+
+.head-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0a7567;
+}
+
+
+.img-size {
+    width: 80%;
+}
+
+.img-size1 {
+    width: 40%;
+}
+
+.arrow {
+    width: 30%;
+    margin-top: 15%;
+}
+
+.arrow1 {
+    width: 20%;
+    margin-top: 10%;
+}
+
+.size {
+    margin-top: -5%;
+}
+
+.visa-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a7567;
+    padding-top: 1rem;
+}
+
+.visa-label2 {
+    font-size: .8rem;
+    color: #0a7567;
+}
+
+.img-desc {
+
+}
+
+.label-desc {
+    color: #0a7567;
+}
+
+.label-desc2 {
+    color: #232323;
+    font-size: .8rem;
+}
+
+.faq-text {
+    color: #055349;
+    font-weight: 700;
+}
+
+.acr-img {
+    width: 10px;
+}
+
+.cl-btn {
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.cl-btn:hover {
+    color: black;
+}
+
+.card-header {
+    background-color: #efefef;
+
+
+}
+
+/*End Section Two*/

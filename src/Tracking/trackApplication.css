@@ -1,0 +1,197 @@
+.jumbotron1 {
+    position: relative;
+    border-radius: 0;
+    background-color: white;
+}
+
+.heading {
+    font-size: 2.3rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #0a7567;
+    margin-top: 3rem;
+}
+
+.heading1 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 1.9rem;
+    color: #535353;
+    margin-top: -1rem;
+}
+
+.visa-code {
+    display: inline-block;
+    align-items: center;
+
+    font-size: 1rem;
+    width: 80%;
+    max-width: 70%;
+    position: relative;
+    box-sizing: border-box;
+    /* !importanté */
+    border: solid 2px transparent;
+    /* !importanté */
+    border-radius: 1em;
+}
+
+.visa-code:before {
+    content: '';
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -4px;
+    /* !importanté */
+    border-radius: inherit;
+    /* !importanté */
+    background: linear-gradient(to right, #0c685c, #0db29c);
+}
+
+::placeholder {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 1.5rem;
+}
+
+
+.btn-outline-success {
+
+    background: linear-gradient(to right, #0c685c, #0db29c);
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+.heading2 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: -2rem;
+    color: #535353;
+    margin-top: 1rem;
+}
+
+/*End Header*/
+/*Start Section One*/
+.jumbotron {
+    padding: 0 0 0;
+    border-radius: 0;
+    background-color: #f4f3f3;
+}
+
+.heading-center {
+    font-size: 1.9rem;
+    text-transform: capitalize;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.status-img {
+    width: 80px;
+}
+
+.img-save {
+    border-radius: 50%;
+    border: #a1a1a1 solid 2px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+}
+
+.label-img {
+    position: absolute;
+    bottom: 15%;
+    color: #b70c0c;
+    font-weight: 700;
+    font-size: 1.2rem;
+    left: 0;
+    right: 0;
+}
+.label-check{
+    color: #232323;
+    letter-spacing: 1px;
+}
+.label-check a{
+    color: #0a7567;
+}
+/*End Section One*/
+/*Start Section Two*/
+.jumbotron2 {
+    position: relative;
+    top: -2rem;
+    padding: 0 0 3.5rem;
+    border-radius: 0;
+    background-color: white;
+}
+.head-text{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0a7567;
+}
+
+
+.img-size{
+    width: 80%;
+}
+
+.img-size1{
+    width: 40%;
+}
+
+.arrow{
+    width: 30%;
+    margin-top: 15%;
+}
+.arrow1{
+    width: 20%;
+    margin-top: 10%;
+}
+.size{
+    margin-top: -5%;
+}
+.visa-label{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a7567;
+    padding-top: 1rem;
+}
+.visa-label2{
+    font-size: .8rem;
+    color: #0a7567;
+}
+.img-desc{
+
+}
+.label-desc{
+    color: #0a7567;
+}
+.label-desc2{
+    color: #232323;
+    font-size: .8rem;
+}
+.faq-text{
+    color: #055349;
+    font-weight: 700;
+}
+.acr-img{
+    width: 10px;
+}
+.cl-btn{
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
+}
+.cl-btn:hover{
+    color: black;
+}
+.card-header{
+    background-color: #efefef;
+
+
+}
+/*End Section Two*/
