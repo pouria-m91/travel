@@ -17,7 +17,7 @@ const routes = [
     {path: "/blogContent", exact: false, name: "BlogContent", component: BlogContent},
     {path: "/blogPost", exact: false, name: "BlogPost", component: BlogPost},
     {path: "/ContactUs", exact: false, name: "ContactUs", component: ContactUs},
-    {path: "/FAQ", exact: false, name: "FAQ", component:git  FAQ},
+    {path: "/FAQ", exact: false, name: "FAQ", component: FAQ},
     {path: "/Form", exact: false, name: "Form", component: Form},
     {path: "/Track/:code", exact: false, name: "Track", component: Track},
     {path: "/Track", exact: false, name: "Track", component: Track},
