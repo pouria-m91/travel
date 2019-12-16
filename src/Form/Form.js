@@ -19,30 +19,9 @@ class Form extends Component {
             countries: [],
             ports: [],
             visaPickUps: [],
-            travelers:{
-                first_name: "fsdfsdf",
-            last_name: "sdfsdfsdf",
-            passport_number: "E12345678",
-            national_id: 1,
-            father_name: "Asad",
-            place_birth: "London",
-            job: "golchin worker",
-            gender: 0,
-            marriage: 1,
-            birthday: "1996-08-20",
-            passport_issue: "2019-08-20",
-            passport_expire: "2023-08-20",
-            previous_nationality_id: 1,
-            passport_type: 7,
-            home_address: {
-                country_id: 1,
-                text: "this is test text on user",
-                city_name: "Tehran",
-                zipcode: ""
-            }
-            },
+            travelers: [],
             travelInfo: {
-                purpose_traveling: "Hard Gang Bang SEX",
+                purpose_traveling: "xxxxxxx",
                 start_travel: date,
                 duration_stay: 5,
                 accomodation_address: "sad sdd as,d asd,asd ,asd,ad",
@@ -76,20 +55,20 @@ class Form extends Component {
     }
 
 
-
     formSwitch() {
         const {formState, countries, ports, visaPickUps, travelInfo, travelers} = this.state;
-        console.log(ports);
         switch (formState) {
             case "step2":
                 return (<Verify onNext={() => this.setState({formState: 'step3'})}/>);
             case "step3":
                 return (<TravelInfo value={travelInfo} ports={ports}
                                     visaPickUps={visaPickUps}
-                                    onNext={(travelInfo) => this.setState({travelInfo: travelInfo,formState: 'step4'})}/>);
+                                    onNext={(travelInfo) => this.setState({
+                                        travelInfo: travelInfo,
+                                        formState: 'step4'
+                                    })}/>);
             case "step4":
-                return (<TravelList value={travelers} ports={ports} countries={countries}
-                                    visaPickUps={visaPickUps}/>);
+                return (<TravelList value={travelers} countries={countries}/>);
             case "step5":
                 return (<Confirm/>);
             default:

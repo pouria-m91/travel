@@ -12,15 +12,15 @@ const VisaCountryInformation = React.lazy(() => import('./layouts/VisaCountryInf
 
 
 const routes = [
-    {path: "/home", exact: true, name: "Home", component: Home},
-    {path: "/AboutUs", exact: false, name: "AboutUs", component: AboutUs},
-    {path: "/blogContent", exact: false, name: "BlogContent", component: BlogContent},
-    {path: "/blogPost", exact: false, name: "BlogPost", component: BlogPost},
-    {path: "/ContactUs", exact: false, name: "ContactUs", component: ContactUs},
-    {path: "/FAQ", exact: false, name: "FAQ", component:git  FAQ},
-    {path: "/Form", exact: false, name: "Form", component: Form},
-    {path: "/Track/:code", exact: false, name: "Track", component: Track},
-    {path: "/Track", exact: false, name: "Track", component: Track},
-    {path: "/visaInfo", exact: false, name: "VisaCountryInformation", component: VisaCountryInformation},
+    {path: "/", exact: true, name: "Home", component: Home},
+    {path: "/AboutUs", exact: true, name: "AboutUs", component: AboutUs},
+    {path: "/blogContent", exact: true, name: "BlogContent", component: BlogContent},
+    {path: "/blogPost", exact: true, name: "BlogPost", component: BlogPost},
+    {path: "/ContactUs", exact: true, name: "ContactUs", component: ContactUs},
+    {path: "/FAQ", exact: true, name: "FAQ", component: FAQ},
+    {path: "/Form", exact: true, name: "Form", component: Form},
+    {path: "/Track/:code", exact: true, name: "Track", component: Track},
+    {path: "/Track", exact: true, name: "Track", component: Track},
+    {path: "/visaInfo", exact: true, name: "VisaCountryInformation", component: VisaCountryInformation},
 ];
 export default routes;
