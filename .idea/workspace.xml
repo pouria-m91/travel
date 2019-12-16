@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="605956ff-2a2e-4193-9900-fad7a398f738" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Form/Traveler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TravelList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TravelList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -99,8 +110,14 @@
       <workItem from="1576075028008" duration="141000" />
       <workItem from="1576132602305" duration="35814000" />
       <workItem from="1576318583469" duration="3722000" />
+<<<<<<< HEAD
       <workItem from="1576432924232" duration="3399000" />
       <workItem from="1576494605049" duration="897000" />
+=======
+      <workItem from="1576432924232" duration="2313000" />
+      <workItem from="1576438286581" duration="1517000" />
+      <workItem from="1576467587788" duration="6490000" />
+>>>>>>> 813ef47f7184f7fecab5114dcdb95d41a6c6c22c
     </task>
     <servers />
   </component>

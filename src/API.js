@@ -1,4 +1,4 @@
-const BASE_URL = 'http://192.168.2.43:8000/api/v1';
+const BASE_URL = 'http://localhost:8000/api/v1';
 
 export const useFetch = (endpoint) => {
   const defaultHeader = {
