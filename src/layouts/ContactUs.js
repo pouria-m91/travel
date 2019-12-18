@@ -1,5 +1,5 @@
 import React from 'react';
-import './contactUs.css';
+import '../styles/contactUs.css';
 import HeaderPic from '../assets/contact-us.png';
 import SmartPhone from '../assets/smartphone.png';
 import WhatsApp from '../assets/whatsapp-2.png';

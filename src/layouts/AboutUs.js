@@ -4,7 +4,7 @@ import WeAre from '../assets/we-are.png';
 import WeProvide from '../assets/we-provide.png';
 import WePromise from '../assets/we-promise.png';
 import Question from '../assets/question.png';
-import './aboutUs.css';
+import '../styles/aboutUs.css';
 
 class AboutUs extends Component {
     constructor(props) {

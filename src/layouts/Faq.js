@@ -1,5 +1,5 @@
 import React from 'react';
-import './faq.css';
+import '../styles/faq.css';
 import HeadPic from '../assets/faq.png';
 import ConversationBlack from '../assets/conversation-black.png';
 import VisaBlack from '../assets/visa-black.png';

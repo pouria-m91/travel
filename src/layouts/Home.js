@@ -9,11 +9,19 @@ import Support from "../assets/passport-copy.png";
 import Price from "../assets/money-bag.png";
 import Dashboard from "../assets/tasks.png";
 import Fast from "../assets/clock.png";
-import './home.css';
+import '../styles/home.css';
 import React, {Component} from "react";
 import {useFetch} from "../API";
+import Container from "@material-ui/core/Container";
+import Col from "reactstrap/es/Col";
+import InfoIcon from '@material-ui/icons/Info';
+import Tooltip from "@material-ui/core/Tooltip";
+import {FillAForm, LightTooltip, useStyles} from "../Tooltips";
+
 
 const api = useFetch('country');
+
+
 
 class Home extends Component {
     constructor(props) {
@@ -28,11 +36,14 @@ class Home extends Component {
         this.onChangeTrack = this.onChangeTrack.bind(this);
     }
 
+
     componentDidMount() {
         api.list().then((data) => {
             this.setState({countries: data, loader: true})
         }).catch(error => {
             alert(error.message);
+            this.setState({countries: [], loader: true})
+
         });
     }
 
@@ -45,200 +56,187 @@ class Home extends Component {
     }
 
     render() {
+
         const {loader, track, countries} = this.state;
         if (loader)
             return (
-                <div>
-                    <header className="offset mt-5 col-md-12">
-                        <div className="container p-0 m-0 ml-2">
+                <Container maxWidth="lg">
+                    <header className="offset col-md-12 mt-4 p-0 m-0">
 
-                            <div className="row p-0 m-0 ">
+                        <div className="row col-md-12 p-0 m-0">
 
-                                <div className="col-md-8 text-left">
-                                    <label className="font-head">Do You Want Apply</label>
-                                    <br/>
-                                    <label className="font-head">For IRAN Visa?</label>
-
-                                    <div className="row col-12 p-0 m-0">
-                                        <div className=" col-9 p-0 m-0">
-                                            <div className=" form-group col-9 button">
-                                                <select className=" form-control insideButton" id="sel1">
-                                                    <option>Select Your Nationality</option>
-                                                    {countries.map((country, index) =>
-                                                        <option key={index} value={country.id}>{country.name}</option>
-                                                    )}
-                                                </select>
-                                            </div>
-                                        </div>
+                            <div className="col-md-6">
+                                <label className="font-head text-left ml-3">Do You Want Apply</label>
+                                <br/>
+                                <label className="font-head text-left ml-3">For IRAN Visa?</label>
 
 
+
+
+                                {/*<div className="col-8 p-0 m-0">*/}
+                                {/*    <div className="form-group col-8 button">*/}
+                                {/*        <select className=" form-control insideButton" id="sel2">*/}
+                                {/*            <option>Select Visa Type</option>*/}
+                                {/*            <option>america</option>*/}
+                                {/*            <option>england</option>*/}
+                                {/*            <option>spain</option>*/}
+                                {/*            <option>check</option>*/}
+                                {/*        </select>*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
+                                <div className="row  p-0 m-0">
+                                    <div className=" form-group col-9 col-sm-7 col-md-9 col-lg-8 button">
+                                        <select className=" form-control insideButton" id="sel1">
+                                            <option>Select Your Nationality</option>
+                                            {countries.map((country, index) =>
+                                                <option key={index} value={country.id}>{country.name}</option>
+                                            )}
+                                        </select>
                                     </div>
-
-                                    <div className="col-8 p-0 m-0">
-                                        <div className="form-group col-8 button">
-                                            <select className=" form-control insideButton" id="sel2">
-                                                <option>Select Visa Type</option>
-                                                <option>america</option>
-                                                <option>england</option>
-                                                <option>spain</option>
-                                                <option>check</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-8 p-0 ml-3">
-                                        <button type="button" className="submit-btn px-4 py-2 m-0">APPLY</button>
-                                    </div>
-
                                 </div>
-                                <div className="col-md-8">
-                                    <img className="img-fluid offset-md-3" src={header} alt=""/>
+
+
+
+                                <div className="col-8 p-0 ml-3">
+                                    <button type="button" className="submit-btn px-4 py-2 m-0">APPLY</button>
                                 </div>
+
+
                             </div>
+                            <Col xs={12} md={6}>
+
+                                <img className="img-fluid" style={{top:0}} src={header} alt=""/>
+                            </Col>
+
                         </div>
+
                     </header>
 
                     <div className="offset">
 
-                        <div className="jumbotron px-0 py-2 m-0">
-
+                        <div className="jumbotron4 p-0 m-0">
+                            <hr className="bg-dark m-0"/>
                             <div className="col-md-12 text-center p-0 m-0">
-                                <h3 className="heading">Steps To Get Visa Of IRAN</h3>
+                                <h3 className="heading px-0 py-4">Steps To Get Visa Of IRAN</h3>
                             </div>
 
-                            <div className="container px-5 py-5 size">
-                                <div className="row text-center">
+                            <div className="container col-md-12">
+                                <div className="row d-flex justify-content-center text-center">
 
-                                    <div className="col mx-1">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Form} alt="checklist" className="img-size"/>
-
-                                            </blockquote>
-                                            <blockquote className="f-size">
-                                                <i className="fas fa-info-circle"> </i>
-                                                Fill a Form
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <div className="col mx-1">
-                                        <div className="feature">
-                                            <img src={Arrow} alt="Arrow" className="arrow"/>
+                                    <div className="col-sm-6 col-md-3 col-xl-2 col-8 py-0 px-5">
+                                        <img src={Form} alt="checklist" className="img-fluid p-3"/>
+                                        <div className="beside">
+                                            <InfoIcon color="action"/>
+                                            <label className="title-step">Fill a Form</label>
                                         </div>
                                     </div>
 
-                                    <div className="col mx-1">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Pay} alt="checklist" className="img-size"/>
-                                            </blockquote>
-                                            <blockquote className="f-size">
-                                                <i className="fas fa-info-circle"> </i>
-                                                Pay
-                                            </blockquote>
+
+                                        <div className="col-md-1 my-auto ">
+                                            <img src={Arrow} alt="Arrow" className="img-fluid m-auto d-none d-md-block"/>
+                                        </div>
+
+
+                                    <div className="col-md-3 col-sm-6 col-xl-2 col-8 py-0 px-5">
+                                        <img src={Pay} alt="checklist" className="img-fluid p-3"/>
+                                        <div className="beside mr-auto ml-auto">
+                                            <InfoIcon color="action"/>
+                                            <label className="title-step">Pay</label>
                                         </div>
                                     </div>
 
-                                    <div className="col mx-1">
-                                        <div className="feature">
-                                            <img src={Arrow} alt="Arrow" className="arrow"/>
+                                    <div className="col-md-1 my-auto">
+                                        <img src={Arrow} alt="Arrow" className="img-fluid m-auto d-none d-md-block"/>
+                                    </div>
+
+
+                                    <div className="col-md-3 col-sm-6 col-xl-2 col-8 py-0 px-5">
+                                        <img src={Wait} alt="checklist" className="img-fluid p-3"/>
+                                        <div className="beside">
+                                            <InfoIcon color="action"/>
+                                            <label className="title-step">Wait</label>
                                         </div>
                                     </div>
 
-                                    <div className="col mx-1">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Wait} alt="checklist" className="img-size"/>
-                                            </blockquote>
-                                            <blockquote className="f-size">
-                                                <i className="fas fa-info-circle"> </i>
-                                                Wait
-                                            </blockquote>
-                                        </div>
-                                    </div>
 
 
                                 </div>
                             </div>
 
-                            <div className="container px-5 py-5 size">
-                                <div className="row text-center">
+                            <div className="container col-md-12">
+                                <div className="row d-flex justify-content-center text-center">
 
-                                    <div className="col mx-1">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Passport} alt="checklist" className="img-size1"/>
+                                    <div className="col-md-3 col-sm-6 col-xl-2 col-8 py-0 px-5">
 
-                                            </blockquote>
-                                            <blockquote className="f-size1">
-                                                <i className="fas fa-info-circle"> </i>
-                                                Pickup Your
-                                                Passport
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                    <div className="col mx-1">
-                                        <div className="feature">
-                                            <img src={Arrow} alt="Arrow" className="arrow1"/>
+                                        <img src={Passport} alt="checklist" className="img-fluid p-3"/>
+                                        <div className="beside">
+                                            <InfoIcon color="action"/>
+                                            <label className="title-step">Pickup Your Passport</label>
                                         </div>
                                     </div>
 
-                                    <div className="col mx-1">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Come} alt="checklist" className="img-size1"/>
-                                            </blockquote>
-                                            <blockquote className="f-size1">
-                                                <i className="fas fa-info-circle"> </i>
-                                                Come To
-                                                IRAN
-                                            </blockquote>
-                                        </div>
+
+                                    <div className="col-md-1 my-auto ">
+                                        <img src={Arrow} alt="Arrow" className="img-fluid m-auto d-none d-md-block"/>
                                     </div>
 
+
+                                    <div className="col-md-3 col-sm-6 col-xl-2 col-8 py-0 px-5">
+                                        <img src={Come} alt="checklist" className="img-fluid p-3"/>
+                                        <div className="beside mr-auto ml-auto">
+                                            <LightTooltip title={FillAForm} placement="left-start">
+                                                <InfoIcon color="action"/>
+                                            </LightTooltip>
+
+                                            <label className="title-step">Come To IRAN</label>
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
+                            <hr className="bg-dark m-0"/>
                         </div>
+
                     </div>
 
                     <div className="offset">
 
-                        <div className="jumbotron1">
+                        <div className="jumbotron5 p-0 m-0">
 
-                            <div className="col-12 text-center">
-                                <h3 className="heading">Track Your Iran Visa Status</h3>
+                            <div className="col-md-12 text-center pt-4 p-0 m-0">
+                                <h3 className="heading m-0 px-0 py-4">Track Your Iran Visa Status</h3>
                             </div>
 
-                            <div className="col-12 text-center">
-                                <p className="heading1">To Track Your Iran Visa Status,
+                            <div className="col-md-12 text-center ">
+                                <p className="heading-track">To Track Your Iran Visa Status,
                                     You Just Need To EnterYour Tracking code and Press Track Button</p>
                             </div>
 
-                            <div className="row">
-                                <div className="col-8 ">
-                                    <form>
-                                        <div className="form-group visa-code text-center float-right">
-                                            <input type="email" className="form-control text-center"
+                            <div className="col-md-12 track-style d-flex justify-content-center p-0 m-0">
+                                <div className="row col-md-7 col-lg-8 col-sm-8 p-0 m-0 border-color">
+
+                                        <div className="form-group col-md-12 button text-center p-0 m-0 ">
+                                            <input type="email" className="form-control text-center p-4 m-0"
                                                    aria-describedby="emailHelp"
                                                    value={this.track}
                                                    onChange={this.onChangeTrack}
                                                    placeholder="-------"/>
                                         </div>
-                                    </form>
+
                                 </div>
-                                <div className="col-3 float-right">
-                                    <button type="button" className="btn btn-outline-success text-uppercase"
+                                <div className="col-md-2 col-sm-2 col-lg-2 p-0 m-0 mb-auto mt-auto ml-3 d-flex justify-content-center">
+                                    <button type="button" className="btn-track text-uppercase px-4 py-3"
                                             onClick={this.goToTrack}>TRACK
                                     </button>
                                 </div>
                             </div>
 
-                            <div className="col-12 text-center">
-                                <p className="heading2">If You Have Any Question About Your Visa Requests,
-                                    Logttin To Your Account and check My Requests Page
+                            <div className="col-md-12 py-4 p-0 m-0 text-center">
+                                <p className="heading-track">If You Have Any Question About Your Visa Requests,
+                                    <a href="/" className="link-color text-decoration-none">Login</a> To Your Account and check My Requests Page
                                 </p>
                             </div>
+                            <hr className="bg-dark m-0"/>
                         </div>
                     </div>
 
@@ -349,7 +347,7 @@ class Home extends Component {
                         </div>
                     </div>
 
-                </div>
+                </Container>
             )
         else return (<center>
             <div>Loading...</div>

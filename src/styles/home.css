@@ -1,12 +1,14 @@
 body {
     overflow-x: hidden;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Muli', sans-serif;
     color: #505962;
 }
 
 header{
     width: 100%;
-    height: 80vh;
+    height: auto;
+    display: inline-block;
+    font-family: 'Muli', sans-serif;
 
 }
 header > .container {
@@ -18,8 +20,8 @@ header > .container {
 .offset:before {
     display: block;
     content: "";
-    height: 4rem;
-    margin-top: -4rem;
+    height: auto;
+    margin-top: 0;
 }
 
 .section-heading h3 {
@@ -32,29 +34,23 @@ header > .container {
 
 .submit-btn{
 
-    background: linear-gradient(to right, #0c685c,#0db29c);
+    background-color: #029682;
     color: white;
     font-size: 1rem;
     border-radius: 8px;
     border: 1px solid #0e786a;
 }
 .submit-btn:hover{
-    background-image: linear-gradient(to right, #055349, #ffffff);
+    background-color: #0c6c60;
     color: white;
 }
 
-.img-fluid{
-    width: 100%;
-    position: absolute;
-    bottom: -1rem;
-    z-index: -1;
-}
 .font-head {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
     padding-bottom: .5rem;
+
     color: #0a7567;
-    letter-spacing: .1rem;
 }
 
 .button {
@@ -96,4 +92,66 @@ select.form-control {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+}
+.jumbotron4 {
+    border-radius: 0;
+    background-color: #f4f3f3;
+    font-family: 'Muli', sans-serif;
+}
+
+.heading {
+    font-size: 2.3rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #0a7567;
+}
+
+.beside{
+    display: inline-block;
+}
+
+.title-step{
+    font-size: 1.4rem;
+    color: #118a7a;
+}
+.tooltip{
+    background-color: #c82333;
+}
+.jumbotron5 {
+    border-radius: 0;
+    background-color: white;
+    font-family: 'Muli', sans-serif;
+}
+.heading-track {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.track-style{
+    display: inline-block;
+}
+
+.btn-track {
+    border: 1px solid #0e786a;
+    background-color: #029682;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.btn-track:hover {
+    background-color: #0c6c60;
+    border-color: #044d44;
+}
+.link-color{
+    color: #0d7a6c;
+}
+.link-color:hover{
+    color: #0d7a6c;
+}
+.border-color{
+    background: linear-gradient(to right, #0c685c,#0db29c);
+    border-radius: 8px;
+    display: inline-block;
 }

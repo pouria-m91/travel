@@ -1,5 +1,5 @@
 import React from 'react';
-import './visaCountryInformation.css';
+import '../styles/visaCountryInformation.css';
 import HeadPic from '../assets/citizen.png';
 import Flag from '../assets/flag.png';
 import Question from '../assets/question.png';

@@ -79,7 +79,7 @@ class Form extends Component {
 
     render() {
         const {ports, visaPickUps, countries} = this.state;
-        if (ports.length && visaPickUps.length && countries.length)
+        // if (ports.length && visaPickUps.length && countries.length)
             return (
                 <div>
                     <header id="home">
@@ -162,7 +162,7 @@ class Form extends Component {
 
                 </div>
             );
-        else return (<div>Loading...</div>);
+        // else return (<div>Loading...</div>);
     }
 
 }

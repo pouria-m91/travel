@@ -1,7 +1,7 @@
 import React from 'react';
 import HeadPic from '../assets/takht.png';
 import Flag from '../assets/flag.png';
-import './blogContent.css';
+import '../styles/blogContent.css';
 import {Link} from "react-router-dom";
 
 const BlogContent = () => {

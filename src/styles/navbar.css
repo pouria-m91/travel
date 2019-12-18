@@ -1,0 +1,50 @@
+.navbar {
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: .8rem;
+    font-family: 'Muli', sans-serif;
+    /*white-space: nowrap;*/
+    background: white !important;
+}
+
+.navbar-brand img {
+    height: 4rem;
+}
+
+.navbar-nav li {
+    padding-right: .7rem;
+}
+
+#ApplyBg{
+    background-color: #0a7567;
+    border-radius: 2rem;
+    color: white;
+    font-size: .8rem;
+
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: black;
+}
+
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #0a7567;
+}
+.navbar .navbar-nav .nav-item .nav-link:active{
+    color: #0a7567;
+}
+.navbar .navbar-nav .nav-item .nav-link:focus{
+    color: #0a7567;
+}
+#reg{
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: .8rem;
+}
+#reg:hover{
+    color: #0a7567;
+}
+#reg:active{
+    color: #0a7567;
+}
