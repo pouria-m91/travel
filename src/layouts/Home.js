@@ -5,7 +5,7 @@ import Pay from "../assets/debtCard.png";
 import Wait from "../assets/hourglass.png";
 import Passport from "../assets/passport.png";
 import Come from "../assets/azadi.png";
-import Support from "../assets/passport-copy.png";
+import Support from "../assets/support.png";
 import Price from "../assets/money-bag.png";
 import Dashboard from "../assets/tasks.png";
 import Fast from "../assets/clock.png";
@@ -17,10 +17,10 @@ import Col from "reactstrap/es/Col";
 import InfoIcon from '@material-ui/icons/Info';
 import Tooltip from "@material-ui/core/Tooltip";
 import {FillAForm, LightTooltip, useStyles} from "../Tooltips";
+import Grid from "@material-ui/core/Grid";
 
 
 const api = useFetch('country');
-
 
 
 class Home extends Component {
@@ -71,8 +71,6 @@ class Home extends Component {
                                 <label className="font-head text-left ml-3">For IRAN Visa?</label>
 
 
-
-
                                 {/*<div className="col-8 p-0 m-0">*/}
                                 {/*    <div className="form-group col-8 button">*/}
                                 {/*        <select className=" form-control insideButton" id="sel2">*/}
@@ -96,7 +94,6 @@ class Home extends Component {
                                 </div>
 
 
-
                                 <div className="col-8 p-0 ml-3">
                                     <button type="button" className="submit-btn px-4 py-2 m-0">APPLY</button>
                                 </div>
@@ -105,7 +102,7 @@ class Home extends Component {
                             </div>
                             <Col xs={12} md={6}>
 
-                                <img className="img-fluid" style={{top:0}} src={header} alt=""/>
+                                <img className="img-fluid" style={{top: 0}} src={header} alt=""/>
                             </Col>
 
                         </div>
@@ -117,7 +114,7 @@ class Home extends Component {
                         <div className="jumbotron4 p-0 m-0">
                             <hr className="bg-dark m-0"/>
                             <div className="col-md-12 text-center p-0 m-0">
-                                <h3 className="heading px-0 py-4">Steps To Get Visa Of IRAN</h3>
+                                <h3 className="heading p-0 m-0 py-4">Steps To Get Visa Of IRAN</h3>
                             </div>
 
                             <div className="container col-md-12">
@@ -132,9 +129,9 @@ class Home extends Component {
                                     </div>
 
 
-                                        <div className="col-md-1 my-auto ">
-                                            <img src={Arrow} alt="Arrow" className="img-fluid m-auto d-none d-md-block"/>
-                                        </div>
+                                    <div className="col-md-1 my-auto ">
+                                        <img src={Arrow} alt="Arrow" className="img-fluid m-auto d-none d-md-block"/>
+                                    </div>
 
 
                                     <div className="col-md-3 col-sm-6 col-xl-2 col-8 py-0 px-5">
@@ -157,7 +154,6 @@ class Home extends Component {
                                             <label className="title-step">Wait</label>
                                         </div>
                                     </div>
-
 
 
                                 </div>
@@ -202,9 +198,9 @@ class Home extends Component {
                     <div className="offset">
 
                         <div className="jumbotron5 p-0 m-0">
-
+                            <hr className="bg-dark m-0"/>
                             <div className="col-md-12 text-center pt-4 p-0 m-0">
-                                <h3 className="heading m-0 px-0 py-4">Track Your Iran Visa Status</h3>
+                                <h3 className="heading p-0 m-0 py-4">Track Your Iran Visa Status</h3>
                             </div>
 
                             <div className="col-md-12 text-center ">
@@ -215,16 +211,17 @@ class Home extends Component {
                             <div className="col-md-12 track-style d-flex justify-content-center p-0 m-0">
                                 <div className="row col-md-7 col-lg-8 col-sm-8 p-0 m-0 border-color">
 
-                                        <div className="form-group col-md-12 button text-center p-0 m-0 ">
-                                            <input type="email" className="form-control text-center p-4 m-0"
-                                                   aria-describedby="emailHelp"
-                                                   value={this.track}
-                                                   onChange={this.onChangeTrack}
-                                                   placeholder="-------"/>
-                                        </div>
+                                    <div className="form-group col-md-12 button text-center p-0 m-0 ">
+                                        <input type="email" className="form-control text-center p-4 m-0"
+                                               aria-describedby="emailHelp"
+                                               value={this.track}
+                                               onChange={this.onChangeTrack}
+                                               placeholder="-------"/>
+                                    </div>
 
                                 </div>
-                                <div className="col-md-2 col-sm-2 col-lg-2 p-0 m-0 mb-auto mt-auto ml-3 d-flex justify-content-center">
+                                <div
+                                    className="col-md-2 col-sm-2 col-lg-2 p-0 m-0 mb-auto mt-auto ml-3 d-flex justify-content-center">
                                     <button type="button" className="btn-track text-uppercase px-4 py-3"
                                             onClick={this.goToTrack}>TRACK
                                     </button>
@@ -233,104 +230,109 @@ class Home extends Component {
 
                             <div className="col-md-12 py-4 p-0 m-0 text-center">
                                 <p className="heading-track">If You Have Any Question About Your Visa Requests,
-                                    <a href="/" className="link-color text-decoration-none">Login</a> To Your Account and check My Requests Page
+                                    <a href="/" className="link-color text-decoration-none">Login</a> To Your Account
+                                    and check My Requests Page
                                 </p>
                             </div>
-                            <hr className="bg-dark m-0"/>
                         </div>
                     </div>
 
                     <div className="offset">
 
-                        <div className="jumbotron">
-
-                            <div className="col-12 text-center">
-                                <h3 className="heading3">What Is Our Benefits?</h3>
+                        <div className="jumbotron4 p-0 m-0">
+                            <hr className="bg-dark m-0"/>
+                            <div className="col-md-12 text-center p-0 m-0">
+                                <h3 className="heading py-4 p-0 m-0">What Is Our Benefits?</h3>
                             </div>
 
-                            <div className="col-12 text-center">
-                                <p className="heading4">We Do Our Bests To Giving You Feel Like Never Before
+                            <div className="col-6 mr-auto ml-auto text-center">
+                                <p className="heading-track">We Do Our Bests To Giving You Feel Like Never Before
                                     Here Is Some Reason Why We Give You Best Service </p>
                             </div>
 
-                            <div className="container px-5 py-5 size">
-                                <div className="row text-center">
+                            <Grid container direction="row-reverse" justify="center" alignItems="center">
 
-                                    <div className="col mx-1 border-dark">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Support} alt="checklist" className="img-size1"/>
-                                                <p className="font-p-1">SUPPORT 7/24</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-
-                                    <div className="col mx-1 border-dark">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Support} alt="checklist" className="img-size1"/>
-                                                <p className="font-p-1">Fully Online Process</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-
-                                    <div className="col mx-1 border-dark">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Price} alt="checklist" className="img-size1"/>
-                                                <p className="font-p-1">Best Price</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-
-                                    <div className="col mx-1 border-dark">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Dashboard} alt="checklist" className="img-size1"/>
-                                                <p className="font-p-1">User Dashboard</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-
-                                    <div className="col mx-1 border-dark">
-                                        <div className="feature">
-                                            <blockquote>
-                                                <img src={Fast} alt="checklist" className="img-size1"/>
-                                                <p className="font-p-1">Fast and Riliable</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-12 text-center">
-                                        <p className="heading5">Some Other:</p>
-                                    </div>
-
-                                    <div className="col-6 unordered">
-                                        <ul className="link2">
-                                            <li><a href="/">Safe and Trusted Payment Method</a></li>
-                                            <li><a href="/">Online Application Tracking</a></li>
-                                            <li><a href="/">Offline Visa Application</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div className="col-6 unordered">
-                                        <ul className="link2">
-                                            <li><a href="/">Step By Step Notification</a></li>
-                                            <li><a href="/">Expertise in Visa Services</a></li>
-                                            <li><a href="/">Money Back Gurantee</a></li>
-                                        </ul>
-                                    </div>
-
-
+                                <Grid item md={2} xs={6} sm={4} xl={2} className="ml-2">
+                                    <div className="border-dark m-0 p-0">
+                                        <img src={Support} alt="checklist" className="card-img p-3"/>
+                                <br/>
+                                <div className="text-center">
+                                    <label className="title-support">SUPPORT 7/24</label>
                                 </div>
+                                    </div>
+                                </Grid>
+
+                                <Grid item md={2} xs={6} sm={4} xl={2} className="ml-2">
+                                    <div className="border-dark m-0 p-0">
+                                        <img src={Passport} alt="checklist" className="img-fluid p-3"/>
+                                        <br/>
+                                        <div className="text-center">
+                                            <label className="title-support">Fully Online Process</label>
+                                        </div>
+                                    </div>
+                                </Grid>
+
+                                <Grid item md={2} xs={6} sm={4} xl={2} className="ml-2">
+                                    <div className="border-dark m-0 p-0">
+                                        <img src={Price} alt="checklist" className="img-fluid p-3"/>
+                                        <br/>
+                                        <div className="text-center">
+                                            <label className="title-support">Best Price</label>
+                                        </div>
+                                    </div>
+                                </Grid>
+
+                                <Grid item md={2} xs={6} sm={4} xl={2} className="ml-2">
+                                    <div className="border-dark m-0 p-0">
+                                        <img src={Dashboard} alt="checklist" className="card-img"/>
+                                        <br/>
+                                        <div className="text-center">
+                                            <label className="title-support">User Dashboard</label>
+                                        </div>
+                                    </div>
+                                </Grid>
+
+                                <Grid item md={2} xs={6} sm={4} xl={2} className="ml-2">
+                                    <div className="border-dark m-0 p-0">
+                                        <img src={Fast} alt="checklist" className="card-img"/>
+                                        <br/>
+                                        <div className="text-center">
+                                            <label className="title-support">Fast and Reliable</label>
+                                        </div>
+                                    </div>
+                                </Grid>
+
+                            </Grid>
+
+
+                            <div className="col-12 text-center">
+                                <p className="heading5">Some Other:</p>
                             </div>
+
+                            <div className="col-6 unordered">
+                                <ul className="link2">
+                                    <li><a href="/">Safe and Trusted Payment Method</a></li>
+                                    <li><a href="/">Online Application Tracking</a></li>
+                                    <li><a href="/">Offline Visa Application</a></li>
+                                </ul>
+                            </div>
+
+                            <div className="col-6 unordered">
+                                <ul className="link2">
+                                    <li><a href="/">Step By Step Notification</a></li>
+                                    <li><a href="/">Expertise in Visa Services</a></li>
+                                    <li><a href="/">Money Back Gurantee</a></li>
+                                </ul>
+                            </div>
+
+
                         </div>
                     </div>
 
                     <div className="offset">
 
-                        <div className="jumbotron1">
-
+                        <div className="jumbotron5 p-0 m-0">
+                            <hr className="bg-dark m-0"/>
                             <div className="col-12 text-center">
                                 <h3 className="heading">Most Popular On Blog</h3>
                             </div>
@@ -346,9 +348,10 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
+                    <hr className="bg-dark m-0"/>
 
                 </Container>
-            )
+            );
         else return (<center>
             <div>Loading...</div>
         </center>);

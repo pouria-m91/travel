@@ -114,6 +114,9 @@ select.form-control {
     font-size: 1.4rem;
     color: #118a7a;
 }
+.title-support{
+    color: #118a7a;
+}
 .tooltip{
     background-color: #c82333;
 }
@@ -154,4 +157,8 @@ select.form-control {
     background: linear-gradient(to right, #0c685c,#0db29c);
     border-radius: 8px;
     display: inline-block;
+}
+
+.img-support{
+    width: 50%;
 }

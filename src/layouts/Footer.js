@@ -4,6 +4,7 @@ import Call from '../assets/contact.png';
 import WhatsApp from '../assets/whatsapp.png';
 import Email from '../assets/email.png';
 import Skype from '../assets/skype.png';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 const Footer = () => {
@@ -96,7 +97,7 @@ const Footer = () => {
                         </div>
                         <div className="col-md-12  text-center mb-5 mr-5 copyRight">
                             <label>All Right Reserved By IRANEVISA</label>
-                            <label className="text-center">Made With <i className="fas fa-heart text-center"> </i> In
+                            <label className="text-center">Made With <FavoriteIcon color="primary" /> In
                                 IRAN</label>
                         </div>
 
