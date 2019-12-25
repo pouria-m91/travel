@@ -121,6 +121,7 @@ class Form extends Component {
                 <Loader/>
             )
         } else {
+
             return (
                 <div>
                     <header id="home">
@@ -204,6 +205,7 @@ class Form extends Component {
                 </div>
             )
         }
+
     }
 }
 

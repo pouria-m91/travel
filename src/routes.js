@@ -12,6 +12,7 @@ const VisaCountryInformation = React.lazy(() => import('./layouts/VisaCountryInf
 
 
 const routes = [
+
     {path: "/", exact: true, name: "Home", component: Home},
     {path: "/AboutUs", exact: true, name: "AboutUs", component: AboutUs},
     {path: "/blogContent", exact: true, name: "BlogContent", component: BlogContent},

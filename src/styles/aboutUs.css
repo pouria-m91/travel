@@ -162,7 +162,6 @@ header > .container {
 .faq-text {
     color: #055349;
     font-weight: 700;
-    margin-bottom: -5px;
 }
 
 .acr-img {
@@ -182,5 +181,16 @@ header > .container {
 .card-header {
     background-color: #efefef;
 }
-
+.f-color{
+    color: black;
+}
+.acr-bg{
+    background-color: #A2A2A2;
+}
+header{
+    font-family: 'Muli', sans-serif;
+}
+.font{
+    font-family: 'Muli', sans-serif;
+}
 /*End Section Six*/

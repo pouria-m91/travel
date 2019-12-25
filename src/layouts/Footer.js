@@ -1,9 +1,10 @@
 import React from 'react';
-import './footer.css';
+import '../styles/footer.css';
 import Call from '../assets/contact.png';
 import WhatsApp from '../assets/whatsapp.png';
 import Email from '../assets/email.png';
 import Skype from '../assets/skype.png';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 const Footer = () => {
@@ -45,8 +46,8 @@ const Footer = () => {
                                         <div className="col-5">
                                             <blockquote className="footer-contact">
                                                 <img src={Call} className="img-contact mr-2" alt="call"/>
-                                                    <label className="lb-size">Contact Us:</label>
-                                                    <hr className="contact-hr"/>
+                                                <label className="lb-size">Contact Us:</label>
+                                                <hr className="contact-hr"/>
                                             </blockquote>
                                         </div>
 
@@ -55,8 +56,8 @@ const Footer = () => {
                                                 <div className="form-group footer-wp">
                                                     <img src={WhatsApp} className="footer-img-wp"
                                                          alt="whatsApp"/>
-                                                        <label className="footer-label1">WhatsApp (24/7 Support)</label>
-                                                        <label className="footer-label2">+989374464179</label>
+                                                    <label className="footer-label1">WhatsApp (24/7 Support)</label>
+                                                    <label className="footer-label2">+989374464179</label>
                                                 </div>
                                             </form>
                                         </div>
@@ -65,9 +66,9 @@ const Footer = () => {
                                                 <div className="form-group footer-wp">
                                                     <img src={Email} className="footer-img-wp"
                                                          alt="whatsApp"/>
-                                                        <label className="footer-label1">Email(Respond In Fastest
-                                                            Time)</label>
-                                                        <label className="footer-label2">Info@Iranevisa.com</label>
+                                                    <label className="footer-label1">Email(Respond In Fastest
+                                                        Time)</label>
+                                                    <label className="footer-label2">Info@Iranevisa.com</label>
                                                 </div>
                                             </form>
                                         </div>
@@ -76,8 +77,8 @@ const Footer = () => {
                                                 <div className="form-group footer-wp">
                                                     <img src={Skype} className="footer-img-wp"
                                                          alt="whatsApp"/>
-                                                        <label className="footer-label1">Skype</label>
-                                                        <label className="footer-label2">EvisaIRAN</label>
+                                                    <label className="footer-label1">Skype</label>
+                                                    <label className="footer-label2">EvisaIRAN</label>
                                                 </div>
                                             </form>
                                         </div>
@@ -87,10 +88,16 @@ const Footer = () => {
                             </div>
                         </div>
 
-
                         <div className="col-md-12  text-center mr-5 copyRight">
+                            <label>Address: پونك اشرفي اصفهاني خيابان كمالي خيابان فتح شمالي كوچه گلبرگ ٣ پلاك ١٦ واحد
+                                ٤</label>
+                            <label>Phone Number:021 44496615</label>
+                            <br/>
+                            <label>Mobile Number: 09358814334</label>
+                        </div>
+                        <div className="col-md-12  text-center mb-5 mr-5 copyRight">
                             <label>All Right Reserved By IRANEVISA</label>
-                            <label className="text-center">Made With <i className="fas fa-heart text-center"> </i> In
+                            <label className="text-center">Made With <FavoriteIcon color="primary" /> In
                                 IRAN</label>
                         </div>
 

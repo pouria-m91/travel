@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import Flag from '../assets/flag.png';
-import './blogPost.css';
+import '../styles/blogPost.css';
 
 const BlogPost = () => {
     return (

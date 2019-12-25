@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700,800&display=swap');
+
 /*Start Fixed*/
 /*--- Extra Bootstrap Column Padding --*/
 [class*="col-"] {
@@ -82,7 +84,7 @@ body {
 
 header{
     width: 100%;
-    height: 80vh;
+    height: auto;
 
 }
 header > .container {
@@ -94,6 +96,6 @@ header > .container {
 .offset:before {
     display: block;
     content: "";
-    height: 4rem;
-    margin-top: -4rem;
+    height: auto;
+    margin-top: 0;
 }

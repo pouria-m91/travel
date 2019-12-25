@@ -4,6 +4,7 @@ import Navbar from "./layouts/Navbar";
 import Footer from "./layouts/Footer";
 import {BrowserRouter as Router, Switch, Route, Redirect, HashRouter} from "react-router-dom";
 import routes from "./routes";
+import {Container} from "@material-ui/core";
 
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
@@ -16,7 +17,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <Container>
                 <Navbar/>
                 <Router>
                     <React.Suspense fallback={loading()}>
@@ -59,7 +60,7 @@ class App extends Component {
                 {/*    </React.Suspense>*/}
                 {/*</HashRouter>*/}
                 <Footer/>
-            </div>
+            </Container>
 
 
         )
