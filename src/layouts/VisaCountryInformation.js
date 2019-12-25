@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../styles/visaCountryInformation.css';
 import HeadPic from '../assets/citizen.png';
 import Flag from '../assets/flag.png';

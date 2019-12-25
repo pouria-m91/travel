@@ -42,32 +42,14 @@ const NavBar = (props) => {
                         <NavItem className="nav-item">
                             <NavLink className="nav-link" href="/blog">Blog</NavLink>
                         </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                About
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem className="nav-item">
-                                    <NavLink className="nav-link" href="/aboutUs">About Us</NavLink>
-                                </DropdownItem>
-                                <DropdownItem className="nav-item">
-                                    <NavLink className="nav-link" href="/contactUs">Contact Us</NavLink>
-                                </DropdownItem>
-                                <DropdownItem className="nav-item">
-                                    <NavLink className="nav-link" href="/faq">FAQ</NavLink>
-                                </DropdownItem>
-
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
-
                         <NavItem className="nav-item">
-                            <NavLink className="nav-link" href="#/aboutUs">About Us</NavLink>
+                            <NavLink className="nav-link" href="/aboutUs">About Us</NavLink>
                         </NavItem>
                         <NavItem className="nav-item">
-                            <NavLink className="nav-link" href="#/contactUs">Contact Us</NavLink>
+                            <NavLink className="nav-link" href="/contactUs">Contact Us</NavLink>
                         </NavItem>
                         <NavItem className="nav-item">
-                            <NavLink className="nav-link" href="#/faq">FAQ</NavLink>
+                            <NavLink className="nav-link" href="/faq">FAQ</NavLink>
                         </NavItem>
                         {/*<UncontrolledDropdown nav inNavbar>*/}
                         {/*    <DropdownToggle nav caret>*/}
