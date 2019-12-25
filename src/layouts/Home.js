@@ -12,15 +12,24 @@ import Fast from "../assets/clock.png";
 import '../styles/home.css';
 import React, {Component} from "react";
 import {useFetch} from "../API";
-import Container from "@material-ui/core/Container";
 import Col from "reactstrap/es/Col";
 import InfoIcon from '@material-ui/icons/Info';
-import Tooltip from "@material-ui/core/Tooltip";
-import {FillAForm, LightTooltip, useStyles} from "../Tooltips";
+import {FillAForm, LightTooltip} from "../Tooltips";
 import Grid from "@material-ui/core/Grid";
+import Slider from "react-slick";
 
 
 const api = useFetch('country');
+
+const slider = {
+
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+
+
+};
 
 
 class Home extends Component {
@@ -60,7 +69,8 @@ class Home extends Component {
         const {loader, track, countries} = this.state;
         if (loader)
             return (
-                <Container maxWidth="lg">
+                <div>
+
                     <header className="offset col-md-12 mt-4 p-0 m-0">
 
                         <div className="row col-md-12 p-0 m-0">
@@ -255,10 +265,10 @@ class Home extends Component {
                                 <Grid item md={2} xs={6} sm={4} xl={2} className="ml-2">
                                     <div className="border-dark m-0 p-0">
                                         <img src={Support} alt="checklist" className="card-img p-3"/>
-                                <br/>
-                                <div className="text-center">
-                                    <label className="title-support">SUPPORT 7/24</label>
-                                </div>
+                                        <br/>
+                                        <div className="text-center">
+                                            <label className="title-support">SUPPORT 7/24</label>
+                                        </div>
                                     </div>
                                 </Grid>
 
@@ -305,26 +315,36 @@ class Home extends Component {
                             </Grid>
 
 
-                            <div className="col-12 text-center">
-                                <p className="heading5">Some Other:</p>
+                            <div className="col-md-12 text-center">
+                                <p className="list-text">Some Other:</p>
                             </div>
 
-                            <div className="col-6 unordered">
-                                <ul className="link2">
-                                    <li><a href="/">Safe and Trusted Payment Method</a></li>
-                                    <li><a href="/">Online Application Tracking</a></li>
-                                    <li><a href="/">Offline Visa Application</a></li>
-                                </ul>
-                            </div>
+                            <div className="container col-md-12 p-0 m-0">
+                                <div className="row  d-flex justify-content-center ">
 
-                            <div className="col-6 unordered">
-                                <ul className="link2">
-                                    <li><a href="/">Step By Step Notification</a></li>
-                                    <li><a href="/">Expertise in Visa Services</a></li>
-                                    <li><a href="/">Money Back Gurantee</a></li>
-                                </ul>
-                            </div>
+                                    <div className="col-md-5 unordered ml-1 p-0 m-0 mb-2">
+                                        <ul className="link-item-color">
+                                            <li><a className="text-decoration-none" href="/">Safe and Trusted Payment
+                                                Method</a></li>
+                                            <li><a className="text-decoration-none" href="/">Online Application
+                                                Tracking</a></li>
+                                            <li><a className="text-decoration-none" href="/">Offline Visa
+                                                Application</a></li>
+                                        </ul>
+                                    </div>
 
+                                    <div className="col-md-5 unordered p-0 m-0 mb-2">
+                                        <ul className="link-item-color">
+                                            <li><a className="text-decoration-none" href="/">Step By Step
+                                                Notification</a></li>
+                                            <li><a className="text-decoration-none" href="/">Expertise in Visa
+                                                Services</a></li>
+                                            <li><a className="text-decoration-none" href="/">Money Back Gurantee</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -333,24 +353,29 @@ class Home extends Component {
 
                         <div className="jumbotron5 p-0 m-0">
                             <hr className="bg-dark m-0"/>
-                            <div className="col-12 text-center">
+                            <div className="col-md-12 text-center">
                                 <h3 className="heading">Most Popular On Blog</h3>
                             </div>
 
-                            <div className="col-12 text-center">
-                                <p className="heading1">Know EveryThing You
+                            <div className="col-md-12 text-center">
+                                <p className="heading-track">Know EveryThing You
                                     Should Know Before And When Traveling To IRAN </p>
                             </div>
 
+                            {/*<Slider className={slider}>*/}
+                            {/*    <div><img src="../assets/about-1.png" alt=""/></div>*/}
+                            {/*    <div><img src="../assets/about-1.png" alt=""/></div>*/}
+                            {/*    <div><img src="../assets/about-1.png" alt=""/></div>*/}
+                            {/*</Slider>*/}
 
-                            <div className="col-12 text-center">
-                                <h3 className="heading2">Most Popular On Blog</h3>
+                            <div className="col-md-12 text-center">
+                                <a className="slider-blog text-decoration-none" href="/">See All Blog Posts</a>
                             </div>
                         </div>
                     </div>
                     <hr className="bg-dark m-0"/>
 
-                </Container>
+                </div>
             );
         else return (<center>
             <div>Loading...</div>

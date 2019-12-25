@@ -14,6 +14,7 @@ import Track from "./Tracking/Track";
 import TrackApplication from "./Tracking/TrackApplication";
 import VisaCountryInformation from "./layouts/VisaCountryInformation";
 import routes from "./routes";
+import {Container} from "@material-ui/core";
 
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
@@ -31,7 +32,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <Container>
                 <Navbar/>
             <HashRouter>
 
@@ -66,7 +67,7 @@ class App extends Component {
                 </React.Suspense>
             </HashRouter>
                 <Footer/>
-            </div>
+            </Container>
 
 
         )
