@@ -29,16 +29,16 @@ const NavBar = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto navbar-nav" navbar>
                         <NavItem className="nav-item">
-                            <NavLink className="nav-link" id="bg" href="#/">Home</NavLink>
+                            <NavLink className="nav-link" id="bg" href="/">Home</NavLink>
                         </NavItem>
                         <NavItem className="nav-item">
-                            <NavLink className="nav-link" href="#/track">Tracking</NavLink>
+                            <NavLink className="nav-link" href="/track">Tracking</NavLink>
                         </NavItem>
                         <NavItem className="nav-item">
-                            <NavLink className="nav-link" href="#/visaInfo">Visa Info</NavLink>
+                            <NavLink className="nav-link" href="/vi">Visa Info</NavLink>
                         </NavItem>
                         <NavItem className="nav-item">
-                            <NavLink className="nav-link" href="#/blog">Blog</NavLink>
+                            <NavLink className="nav-link" href="/blog">Blog</NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
@@ -46,13 +46,13 @@ const NavBar = (props) => {
                             </DropdownToggle>
                             <DropdownMenu right>
                                 <DropdownItem className="nav-item">
-                                    <NavLink className="nav-link" href="#/aboutUs">About Us</NavLink>
+                                    <NavLink className="nav-link" href="/aboutUs">About Us</NavLink>
                                 </DropdownItem>
                                 <DropdownItem className="nav-item">
-                                    <NavLink className="nav-link" href="#/contactUs">Contact Us</NavLink>
+                                    <NavLink className="nav-link" href="/contactUs">Contact Us</NavLink>
                                 </DropdownItem>
                                 <DropdownItem className="nav-item">
-                                    <NavLink className="nav-link" href="#/faq">FAQ</NavLink>
+                                    <NavLink className="nav-link" href="/faq">FAQ</NavLink>
                                 </DropdownItem>
 
                             </DropdownMenu>

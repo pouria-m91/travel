@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="605956ff-2a2e-4193-9900-fad7a398f738" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Form/Traveler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/xxx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Tools.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Confirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Confirm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Customer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TravelInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TravelInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/TravelList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TravelList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Traveler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Traveler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layouts/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/VisaCountryInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/VisaCountryInformation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,7 +60,8 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -113,6 +124,13 @@
       <workItem from="1576432924232" duration="2313000" />
       <workItem from="1576438286581" duration="1517000" />
       <workItem from="1576467587788" duration="6490000" />
+      <workItem from="1576474719975" duration="382000" />
+      <workItem from="1576505485550" duration="8197000" />
+      <workItem from="1576568773911" duration="27365000" />
+      <workItem from="1576770191655" duration="16939000" />
+      <workItem from="1576825557935" duration="20437000" />
+      <workItem from="1577214245540" duration="877000" />
+      <workItem from="1577267963773" duration="3354000" />
     </task>
     <servers />
   </component>

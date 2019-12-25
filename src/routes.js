@@ -18,9 +18,10 @@ const routes = [
     {path: "/blogPost", exact: true, name: "BlogPost", component: BlogPost},
     {path: "/ContactUs", exact: true, name: "ContactUs", component: ContactUs},
     {path: "/FAQ", exact: true, name: "FAQ", component: FAQ},
-    {path: "/Form", exact: true, name: "Form", component: Form},
+    {path: "/Request", exact: true, name: "Form", component: Form},
     {path: "/Track/:code", exact: true, name: "Track", component: Track},
     {path: "/Track", exact: true, name: "Track", component: Track},
-    {path: "/visaInfo", exact: true, name: "VisaCountryInformation", component: VisaCountryInformation},
+    {path: "/vi", exact: true, name: "Visa Info", component: VisaCountryInformation},
+    {path: "/vi/:title", exact: true, name: "Visa Info", component: VisaCountryInformation},
 ];
 export default routes;

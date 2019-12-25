@@ -8,6 +8,12 @@ import TravelList from "./TravelList";
 import Confirm from "./Confirm";
 import {useFetch} from "../API";
 import moment from "moment";
+import {CircularProgress} from "@material-ui/core";
+import Row from "reactstrap/es/Row";
+import Col from "reactstrap/es/Col";
+import Container from "reactstrap/es/Container";
+import {Loader} from "../Tools";
+import Login from "./Login";
 
 
 class Form extends Component {
@@ -18,22 +24,33 @@ class Form extends Component {
             formState: 'step4',
             countries: [],
             ports: [],
+            loader: true,
+            user: {},
             visaPickUps: [],
             travelers: [],
-            travelInfo: {
-                purpose_traveling: "xxxxxxx",
-                start_travel: date,
-                duration_stay: 5,
-                accomodation_address: "sad sdd as,d asd,asd ,asd,ad",
-                entry_port_id: 1,
-                departure_port_id: 2,
-                visa_get_place_id: 3
-            }
+            visa: [],
         };
         this.formSwitch = this.formSwitch.bind(this);
+        this.init = this.init.bind(this);
+        this.onChangeState = this.onChangeState.bind(this);
     }
 
     componentDidMount() {
+        useFetch('visa').list().then((data) => {
+            this.setState({visa: data, loader: false});
+            this.init();
+        }).catch(error => {
+            this.setState({visa: []});
+            alert(error.message);
+        });
+    }
+
+    init() {
+        useFetch('user/info').get().then((data) => {
+            this.setState({user: data, formState: 'step4'});
+        }).catch(error => {
+            this.setState({user: {}, formState: 'step1'});
+        });
         useFetch('country').list().then((data) => {
             this.setState({countries: data});
         }).catch(error => {
@@ -54,32 +71,56 @@ class Form extends Component {
         });
     }
 
+    onChangeState(state) {
+        this.setState({
+            formState: state
+        });
+    }
 
     formSwitch() {
-        const {formState, countries, ports, visaPickUps, travelInfo, travelers} = this.state;
+        const {formState, countries, user, visa, ports, visaPickUps, travelInfo, travelers} = this.state;
         switch (formState) {
             case "step2":
                 return (<Verify onNext={() => this.setState({formState: 'step3'})}/>);
             case "step3":
-                return (<TravelInfo value={travelInfo} ports={ports}
-                                    visaPickUps={visaPickUps}
-                                    onNext={(travelInfo) => this.setState({
-                                        travelInfo: travelInfo,
-                                        formState: 'step4'
-                                    })}/>);
+                return (<Login onNext={() => this.setState({formState: 'step4'})}/>);
             case "step4":
-                return (<TravelList value={travelers} countries={countries}/>);
+                return (<TravelList
+                    ports={ports}
+                    visa={visa}
+                    visaPickUps={visaPickUps}
+                    onNext={(travelers) => this.setState({
+                        travelers: travelers,
+                        formState: 'step5'
+                    })}
+                    value={travelers}
+                    countries={countries}/>);
             case "step5":
-                return (<Confirm/>);
+                if (travelers.length > 0 && travelers.length <= 10)
+                    return (<Confirm
+                        user={user}
+                        travelers={travelers}
+                        visa={visa}
+                        onChangeState={this.onChangeState}
+                    />);
+                else {
+                    this.setState({formState: 'step4'});
+                }
+
             default:
-                return (<Customer countries={countries} onNext={() => this.setState({formState: 'step2'})}/>)
+                return (<Customer countries={countries} onNext={(step) => this.setState({formState: step})}/>)
         }
+        return ('');
     }
 
 
     render() {
-        const {ports, visaPickUps, countries} = this.state;
-        if (ports.length && visaPickUps.length && countries.length)
+        const {ports, loader, visaPickUps, countries} = this.state;
+        if (loader) {
+            return (
+                <Loader/>
+            )
+        } else {
             return (
                 <div>
                     <header id="home">
@@ -104,11 +145,9 @@ class Form extends Component {
 
                     </header>
 
-                    <div className="offset">
-
-                        <div className="jumbotron">
-
-                            <div className="col-12 text-left">
+                    <div className={'offset'}>
+                        <Row className={'jumbotron'}>
+                            <Col xs={12}>
                                 <h3 className="heading">How To Get Iran Online Visa:</h3>
                                 <p className="heading-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                     eiusmod
@@ -151,20 +190,21 @@ class Form extends Component {
                                     maecenas
                                     accumsan
                                     lacus vel facilisis. . </p>
-                            </div>
-                        </div>
+                            </Col>
+                        </Row>
                     </div>
 
-                    <div className="offset">
-                        {this.formSwitch()}
+                    <div className="offset" style={{minHeight: 100}}>
+                        {(ports.length && visaPickUps.length && countries.length) ? this.formSwitch() : <div>
+                            <center><CircularProgress/></center>
+                        </div>}
                     </div>
 
 
                 </div>
-            );
-        else return (<div>Loading...</div>);
+            )
+        }
     }
-
 }
 
 export default Form;
