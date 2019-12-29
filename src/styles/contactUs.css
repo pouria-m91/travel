@@ -4,12 +4,6 @@
     height: 3rem;
 }
 
-.img-fluid {
-    width: 100%;
-    max-width: 75%;
-}
-
-
 #f1 {
     font-size: 2.3rem;
     font-weight: 700;
@@ -82,29 +76,21 @@
 
 .bg-img {
     background-color: #f4f3f3;
-    border-radius: 50%;
-    height: auto;
-    width: 50%;
 }
 
-.card-title {
-    font-weight: 700;
-    color: black;
-}
+.img-top {
+     max-width: 50%;
+ }
 
-.card-img-top {
-    max-width: 50%;
-}
-
-.card-text {
+.card-number {
     color: #0a7567;
     font-weight: 700;
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
-.card-title1 {
-    font-size: .8rem;
+.card-head {
     color: black;
+    font-weight: 700;
 }
 
 .btn-outline-success {
@@ -122,10 +108,6 @@
     border-color: #044d44;
 }
 
-.card-box {
-    border-radius: 10px;
-}
-
 /*End Section One*/
 /*Start Section Two*/
 .faq-text {
@@ -137,10 +119,12 @@
 .acr-img {
     width: 10px;
 }
-.flex-head{
+
+.flex-head {
     display: flex;
     flex-direction: row
 }
+
 .cl-btn {
     color: black;
     font-weight: 700;

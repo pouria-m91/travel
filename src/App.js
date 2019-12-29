@@ -32,7 +32,7 @@ class App extends Component {
 
     render() {
         return (
-            <Container>
+            <div>
                 <Navbar/>
             <HashRouter>
 
@@ -67,7 +67,7 @@ class App extends Component {
                 </React.Suspense>
             </HashRouter>
                 <Footer/>
-            </Container>
+            </div>
 
 
         )

@@ -9,7 +9,7 @@ import Question from './assets/question.png';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        width: '90%',
+        width: '100%',
     },
     heading: {
         fontSize: theme.typography.pxToRem(15),

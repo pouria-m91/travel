@@ -76,10 +76,10 @@ const NavBar = (props) => {
                         {/*</NavItem>*/}
                     </Nav>
                     <NavbarText className="nav-item">
-                        <NavLink className="nav-link"  href="/"><a className="pt-1 pb-1 pr-3 pl-3" id="ApplyBg">Apply For Visa</a></NavLink>
+                        <NavLink className="nav-link"  href="/"><label className="pt-1 pb-1 pr-3 pl-3" id="ApplyBg">Apply For Visa</label></NavLink>
                     </NavbarText>
                     <NavbarText className="nav-item">
-                        <NavLink className="nav-links" href="/"><a id="reg">login/register</a></NavLink>
+                        <NavLink className="nav-links" href="/"><label id="reg">login/register</label></NavLink>
                     </NavbarText>
                 </Collapse>
             </Navbar>
