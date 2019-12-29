@@ -16,22 +16,19 @@
     font-size: .9rem;
 }
 
-.link:hover {
+.link.hover {
     background-color: #3ab3a3;
     color: white;
     font-weight: 700;
     font-size: .9rem;
 }
 
-.link:active {
+.link.active {
     background-color: #179283;
     color: white;
     font-weight: 700;
     font-size: .9rem;
 }
-.link:focus{
-    background-color: #179283;
-    color: white;
-    font-weight: 700;
-    font-size: .9rem;
+.acr-img{
+    width: 10px;
 }

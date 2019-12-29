@@ -15,15 +15,15 @@ const Visa = React.lazy(() => import('./layouts/Visa/Visa'));
 const routes = [
 
     {path: "/", exact: true, name: "Home", component: Home},
-    {path: "/AboutUs", exact: true, name: "AboutUs", component: AboutUs},
+    {path: "/aboutUs", exact: true, name: "AboutUs", component: AboutUs},
     {path: "/blogContent", exact: true, name: "BlogContent", component: BlogContent},
-    {path: "/blogPost", exact: true, name: "BlogPost", component: BlogPost},
-    {path: "/ContactUs", exact: true, name: "ContactUs", component: ContactUs},
-    {path: "/FAQ", exact: true, name: "FAQ", component: FAQ},
+    {path: "/blog", exact: true, name: "BlogPost", component: BlogPost},
+    {path: "/contactUs", exact: true, name: "ContactUs", component: ContactUs},
+    {path: "/faq", exact: true, name: "FAQ", component: FAQ},
     {path: "/Request", exact: true, name: "Form", component: Form},
-    {path: "/Track/:code", exact: true, name: "Track", component: Track},
-    {path: "/Track", exact: true, name: "Track", component: Track},
-    {path: "/Visa", exact: true, name: "Visa", component: Visa},
-    {path: "/Visa/:title", exact: true, name: "Visa Info", component: VisaCountryInformation},
+    {path: "/track/:code", exact: true, name: "Track", component: Track},
+    {path: "/track", exact: true, name: "Track", component: Track},
+    {path: "/visa", exact: true, name: "Visa", component: Visa},
+    {path: "/visa/:title", exact: true, name: "Visa Info", component: VisaCountryInformation},
 ];
 export default routes;

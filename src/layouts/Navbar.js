@@ -37,7 +37,7 @@ const NavBar = (props) => {
                             <NavLink className="nav-link" href="/track">Tracking</NavLink>
                         </NavItem>
                         <NavItem className="nav-item">
-                            <NavLink className="nav-link" href="/vi">Visa Info</NavLink>
+                            <NavLink className="nav-link" href="/visa">Visa Info</NavLink>
                         </NavItem>
                         <NavItem className="nav-item">
                             <NavLink className="nav-link" href="/blog">Blog</NavLink>
