@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import '../styles/visaCountryInformation.css';
-import HeadPic from '../assets/citizen.png';
-import Flag from '../assets/flag.png';
-import Question from '../assets/question.png';
 import {Loader} from "../Tools";
 import {useFetch} from "../API";
 import Row from "reactstrap/es/Row";
 import Col from "reactstrap/es/Col";
 import ReactDOM from "react-dom";
-
+import FAQComponent from "../FAQComponent";
+import {FAQ2JSON} from "../Tools";
 
 class VisaInfo extends Component {
     constructor(props) {
@@ -16,13 +14,14 @@ class VisaInfo extends Component {
         this.state = {
             loader: true,
             visa_info: {},
+            countries: props.countries ? props.countries : [],
             title: props.title ? props.title : props.match.params.title,
         };
         this.loadContent = this.loadContent.bind(this);
     }
 
     componentDidMount() {
-        const {title} = this.state;
+        const {title, countries} = this.state;
         useFetch('vi/' + title).get().then((data) => {
             this.setState({visa_info: data, loader: false});
         }).catch(error => {
@@ -32,6 +31,13 @@ class VisaInfo extends Component {
             // else
             //     alert(error.message);
         });
+        if (countries.length == 0)
+            useFetch('country').list().then((data) => {
+                this.setState({countries: data});
+            }).catch(error => {
+                this.setState({countries: []});
+            });
+
     }
 
     loadContent() {
@@ -43,8 +49,9 @@ class VisaInfo extends Component {
         }
     }
 
+
     render() {
-        const {loader, visa_info} = this.state;
+        const {loader, visa_info, countries} = this.state;
         if (loader)
             return (
                 <Loader/>
@@ -81,21 +88,46 @@ class VisaInfo extends Component {
                         <div className="jumbotron">
 
                             <Row>
-                                <Col xs={9} className={'float-left'}>
+                                {/*<Col xs={12} className={'d-md-none'}>*/}
+                                {/*    <Col xs={12} className="card p-3 sticky-top w-100" id="card">*/}
+                                {/*        <img className="card-img-top h-auto w-100"*/}
+                                {/*             src={'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/' + 'ir' + '.svg'}*/}
+                                {/*             alt="Flag"/>*/}
+                                {/*        <div className="card-body">*/}
+                                {/*            <h5 className="card-title">Issuable Visa Type:</h5>*/}
+                                {/*            <h5 className="card-text">Tourist (Type B)</h5>*/}
+                                {/*            <h5 className="card-title1">Avg Required Time:</h5>*/}
+                                {/*            <h5 className="card-text">2 Month Before Travel</h5>*/}
+                                {/*            <h5 className="card-title1">Stay Validity Period:</h5>*/}
+                                {/*            <h5 className="card-text">30 Days</h5>*/}
+                                {/*            <h5 className="card-title1">Price:</h5>*/}
+                                {/*            <h5 className="card-text1 text-center mt-2 mb-0">80 $</h5>*/}
+                                {/*            <div className="d-flex justify-content-center">*/}
+                                {/*                <button type="button"*/}
+                                {/*                        className="btn btn-outline-success mt-3 text-uppercase">*/}
+                                {/*                    APPLY NOW*/}
+                                {/*                </button>*/}
+                                {/*            </div>*/}
+                                {/*        </div>*/}
+                                {/*    </Col>*/}
+                                {/*</Col>*/}
+                                <Col xs={12} md={9} className={'float-left'}>
                                     <div dangerouslySetInnerHTML={this.loadContent()}/>
                                 </Col>
-                                <Col xs={3} className="float-right">
-                                    <div className="card col-12 p-3 sticky-top card-width" id="card">
-                                        <img className="card-img-top" src={Flag} alt="Flag"/>
+                                <Col xs={12} md={3}>
+                                    <Col xs={12} className="card p-3 sticky-top w-100" id="card">
+                                        <img className="card-img-top h-auto w-100"
+                                             src={'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/' + 'ir' + '.svg'}
+                                             alt="Flag"/>
                                         <div className="card-body">
                                             <h5 className="card-title">Issuable Visa Type:</h5>
-                                            <h5 className="card-text">Tourist (Type B)</h5>
+                                            <h5 className="card-text">{visa_info.issuable ? visa_info.issuable : ''}</h5>
                                             <h5 className="card-title1">Avg Required Time:</h5>
-                                            <h5 className="card-text">2 Month Before Travel</h5>
+                                            <h5 className="card-text">{visa_info.required_time ? visa_info.required_time : ''}</h5>
                                             <h5 className="card-title1">Stay Validity Period:</h5>
-                                            <h5 className="card-text">30 Days</h5>
+                                            <h5 className="card-text">{visa_info.stay_period ? visa_info.stay_period : ''}</h5>
                                             <h5 className="card-title1">Price:</h5>
-                                            <h5 className="card-text1 text-center mt-2 mb-0">80 $</h5>
+                                            <h5 className="card-text1 text-center mt-2 mb-0">{visa_info.price ? visa_info.price : ''}</h5>
                                             <div className="d-flex justify-content-center">
                                                 <button type="button"
                                                         className="btn btn-outline-success mt-3 text-uppercase">
@@ -103,7 +135,7 @@ class VisaInfo extends Component {
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Col>
                                 </Col>
                             </Row>
 
@@ -117,269 +149,16 @@ class VisaInfo extends Component {
                                 <h3 className="heading-center faq-text">FAQ of Iranian Visa for American Citizens</h3>
                             </div>
 
-                            <div className="col-9 ml-4">
-                                <div className="accordion" id="accordion">
-                                    <div className="card">
-
-                                        <div className="card-header p-0" id="headingOne">
-                                            <img src={Question} alt="question" className="acr-img ml-3 mr-2 mb-1"/>
-                                            <label className="mt-3 mb-0">How can I track my iran visa application
-                                                form?</label>
-                                            <button className="btn btn-link float-right text-decoration-none cl-btn"
-                                                    type="button"
-                                                    data-toggle="collapse" data-target="#collapseOne"
-                                                    aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                +
-                                            </button>
-                                        </div>
-
-                                        <div id="collapseOne" className="collapse show" aria-labelledby="headingOne"
-                                             data-parent="#accordion">
-                                            <div className="card-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisisLorem ipsum dolor sit amet,
-                                                consectetur
-                                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                                magna
-                                                aliqua. Quis
-                                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-                                                accumsan
-                                                lacus vel
-                                                facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis. .
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="card">
-                                        <div className="card-header p-0" id="headingTwo">
-                                            <img src={Question} alt="question" className="acr-img ml-3 mr-2 mb-1"/>
-                                            <label className="mt-3 mb-0">How can I track my iran visa application
-                                                form?</label>
-                                            <button
-                                                className="btn btn-link float-right text-decoration-none cl-btn collapsed"
-                                                type="button"
-                                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
-                                                +
-                                            </button>
-
-                                        </div>
-                                        <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo"
-                                             data-parent="#accordion">
-                                            <div className="card-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisisLorem ipsum dolor sit amet,
-                                                consectetur
-                                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                                magna
-                                                aliqua. Quis
-                                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-                                                accumsan
-                                                lacus vel
-                                                facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis. .
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="card">
-                                        <div className="card-header p-0" id="headingThree">
-                                            <img src={Question} alt="question" className="acr-img ml-3 mr-2 mb-1"/>
-                                            <label className="mt-3 mb-0">How can I track my iran visa application
-                                                form?</label>
-                                            <button
-                                                className="btn btn-link float-right text-decoration-none cl-btn collapsed"
-                                                type="button"
-                                                data-toggle="collapse" data-target="#collapseThree"
-                                                aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                                +
-                                            </button>
-
-                                        </div>
-                                        <div id="collapseThree" className="collapse" aria-labelledby="headingThree"
-                                             data-parent="#accordion">
-                                            <div className="card-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisisLorem ipsum dolor sit amet,
-                                                consectetur
-                                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                                magna
-                                                aliqua. Quis
-                                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-                                                accumsan
-                                                lacus vel
-                                                facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis. .
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="card">
-                                        <div className="card-header p-0" id="headingFour">
-                                            <img src={Question} alt="question" className="acr-img ml-3 mr-2 mb-1"/>
-                                            <label className="mt-3 mb-0">How can I track my iran visa application
-                                                form?</label>
-                                            <button
-                                                className="btn btn-link float-right text-decoration-none cl-btn collapsed"
-                                                type="button"
-                                                data-toggle="collapse" data-target="#collapseThree"
-                                                aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                                +
-                                            </button>
-                                        </div>
-
-                                        <div id="collapseFour" className="collapse" aria-labelledby="headingThree"
-                                             data-parent="#accordion">
-                                            <div className="card-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisisLorem ipsum dolor sit amet,
-                                                consectetur
-                                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                                magna
-                                                aliqua. Quis
-                                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-                                                accumsan
-                                                lacus vel
-                                                facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis.
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                tempor
-                                                incididunt ut
-                                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
-                                                Risus
-                                                commodo
-                                                viverra maecenas accumsan lacus vel facilisis. .
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            {visa_info.faq ?
+                                <Row>
+                                    <Col xs={12} md={9}>
+                                        {visa_info.faq.map((faq, index) =>
+                                            <FAQComponent key={index} faq={faq}/>
+                                        )}
+                                    </Col>
+                                    {FAQ2JSON(visa_info.faq)}
+                                </Row>
+                                : ''}
                             <div className="col-12 ml-4">
                                 <h3 className="heading-center faq-text">Iran Visa For Other Nationality:</h3>
                             </div>
@@ -387,12 +166,11 @@ class VisaInfo extends Component {
                             <div className="col-8 float-left">
 
                                 <div className="form-group col-6 float-left button">
-                                    <select className=" form-control insideButton" id="country">
-                                        <option>Select Other Country</option>
-                                        <option>america</option>
-                                        <option>england</option>
-                                        <option>spain</option>
-                                        <option>check</option>
+                                    <select className=" form-control insideButton" id="sel1">
+                                        <option>Select Your Nationality</option>
+                                        {countries.map((country, index) =>
+                                            <option key={index} value={country.id}>{country.name}</option>
+                                        )}
                                     </select>
                                 </div>
 

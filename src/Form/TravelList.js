@@ -163,7 +163,6 @@ class TravelList extends Component {
             travelers[index][type].blob = undefined;
             this.setState({travelers});
         }
-
     }
 
     travelerChange(index, event) {

@@ -9,6 +9,7 @@ const FAQ = React.lazy(() => import('./layouts/Faq'));
 const Form = React.lazy(() => import('./Form/Form'));
 const Track = React.lazy(() => import('./Tracking/TrackApplication'));
 const VisaCountryInformation = React.lazy(() => import('./layouts/VisaCountryInformation'));
+const Visa = React.lazy(() => import('./layouts/Visa/Visa'));
 
 
 const routes = [
@@ -22,7 +23,7 @@ const routes = [
     {path: "/Request", exact: true, name: "Form", component: Form},
     {path: "/Track/:code", exact: true, name: "Track", component: Track},
     {path: "/Track", exact: true, name: "Track", component: Track},
-    {path: "/vi", exact: true, name: "Visa Info", component: VisaCountryInformation},
-    {path: "/vi/:title", exact: true, name: "Visa Info", component: VisaCountryInformation},
+    {path: "/Visa", exact: true, name: "Visa", component: Visa},
+    {path: "/Visa/:title", exact: true, name: "Visa Info", component: VisaCountryInformation},
 ];
 export default routes;
